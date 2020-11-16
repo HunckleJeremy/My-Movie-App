@@ -26,7 +26,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             Movies("No Time To Die", R.drawable.notimetodie),
             Movies("Shaft", R.drawable.shaft),
             Movies("Joker", R.drawable.joker),)
-        rvCast.adapter = RecyclerViewAdapter(movies)
+       // rvCast.adapter = RecyclerViewAdapter(MovieResult().results)
     }
 
 }

@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.viewpageritem.view.*
 
 
-class ViewPagerAdapter(val images: List<Int>): RecyclerView.Adapter<ViewPagerAdapter.MyViewHolder>() {
+class ViewPagerAdapter(val images: List<Result>): RecyclerView.Adapter<ViewPagerAdapter.MyViewHolder>() {
     
     inner class MyViewHolder(item: View): RecyclerView.ViewHolder(item){
 
@@ -20,8 +21,8 @@ class ViewPagerAdapter(val images: List<Int>): RecyclerView.Adapter<ViewPagerAda
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val image = images[position]
-        holder.itemView.viewPagerimage.setImageResource(image)
+        val image = "https://image.tmdb.org/t/p/w500${images[position].backdropPath}"
+        Picasso.get().load(image).into(holder.itemView.viewPagerimage)
     }
 
     override fun getItemCount(): Int {
